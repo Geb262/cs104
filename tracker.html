@@ -1,12 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE html> 
+<html>
+
+Your Last Week
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index page</title>
+ 
+
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+ 
 </head>
 <body>
-    
-    
+    <div id="container"></div>
+    <script>
+ 
+        var pie = new ej.charts.AccumulationChart({
+            //Initializing Series
+            series: [
+                {
+                    dataSource: [
+                        { 'x': 'Monday', y: 12 }, { 'x': 'Tuesday', y: 9 },
+                        { 'x': 'Wednesday', y: 6 },
+                        { 'x': 'Thursday', y: 5 }, { 'x': 'Friday', y: 7 },
+                        { 'x': 'Saturday', y: 10 }, { 'x': 'Sunday', y: 3 }
+                    ],
+                    dataLabel: {
+                        visible: true,
+                        position: 'Inside',
+                    },
+                    xName: 'x',
+                    yName: 'y'
+                }
+            ],
+        });
+        pie.appendTo('#container');
+    </script>
 </body>
+
 </html>
+
