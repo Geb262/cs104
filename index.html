@@ -1,49 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index page</title>
+
+    <body>
+        <head>
+            <style>
+            body {margin:0;}
+            
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+              position: fixed;
+              top: 0;
+              width: 100%;
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            li a:hover:not(.active) {
+              background-color: #111;
+            }
+            
+            .active {
+              background-color: #b963c8;
+            }
+            </style>
+            </head>
+            <body>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="record.html">Start Sleeping</a></li>
+                <li><a href="accountpage.html">Account</a></li>
+                <li><a href="question.html">Q&A</a></li>
+              </ul>
+        </body>
 </head>
 <body style="width: 100%;">
     <h1 style="font-size:80px;text-align:center;background-color: #e6b3ff;"><centre style="color:#7700b3"> Z's </centre></h1>
-    <a href="accountpage.html"><p style="font-size:8px;text-align:center;background-color: #e6b3ff;"><centre style="color:#e6b3ff"> Z's </centre></p></a>
     <img src="images/sloth(1).png" alt="sloth" width="999" height="455" style="width:100%">
-<html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<body>
 
-<canvas id="myChart" style="width:200%;max-width:800px"></canvas>
+    <html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <body>
+        <div style="display: flex; align-items: center;">
+            <div>
+                <canvas id="myChart" style="width:700%; max-width:1200px"></canvas>
+            </div>
+            <div style="text-align: center;">
+                <h2 style="font-size:60px;">Sleep Tip #5</h2>
+                <p>Counting sheep helps you to fall asleep.</p>
+            </div>
+        </div>
 
-<script>
-var xValues = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"];
-var yValues = [7, 10 , 3 , 12 , 9 , 1];
-var barColors = ["#9900cc", "#c61aff", "#df80ff", "#ecb3ff", "#f9e6ff",];
+        <script>
+        var xValues = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"];
+        var yValues = [7, 10 , 3 , 12 , 9 , 1];
+        var barColors = ["#9900cc", "#c61aff", "#df80ff", "#ecb3ff", "#f9e6ff",];
 
-new Chart("myChart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "Last 5 days of Sleep"
-    }
-  }
-});
-
-
-</script>
-<a href="tracker.html">tracker</a>
-<h2 style="font-size:60px;text-align:left;">Sleep Tip #5</h2>
-<p style="font-size:25px;">Counting sleep helps you to fall asleep.</p>
-<h1 style="font-size:80px;text-align:center;background-color: #e6b3ff;"><centre style="color:#e6b3ff">Z's</centre></h1>
-
-</body>
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "Last 5 days of Sleep"
+                }
+            }
+        });
+        </script>
+        <h1 style="font-size:80px;text-align:center;background-color: #e6b3ff;"><centre style="color:#e6b3ff">Z's</centre></h1>
+    </body>
 </html>
