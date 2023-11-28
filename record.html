@@ -1,8 +1,161 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<h1style="color:Purple;"><h1>
+<head><h1style="color:Purple;">Enjoy Your Z's!<h1>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+  <body>
+    body {
+      background-color: #333;
+      color: purple;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #stopwatch {
+      font-size: 2em;
+    }
 
 
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Small Clock</title>
+
+    body {
+     
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      height: 100vh;
+      margin: 100;
+    }
+
+    #clock {
+      width: 100px;
+      height: 20px;
+      background-color:;
+      color:#800080;
+      text-align: center;
+      font-size: 25px;
+      border-radius: 3px;
+      line-height: 20px;
+    }
+  </style>
+</head>
+
+  <div id="clock"></div>
+
+  <script>
+    function updateClock() {
+      const clock = document.getElementById('clock');
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      clock.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initial update
+    updateClock();
+  </script>
+
+</html>
+
+</head>
+
+  <div id="stopwatch">00:00:00</div>
+
+  <script>
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let timer;
+
+    function startStopwatch() {
+      timer = setInterval(updateStopwatch, 1000);
+    }
+
+    function stopStopwatch() {
+      clearInterval(timer);
+    }
+
+    function resetStopwatch() {
+      seconds = 0;
+      minutes = 0;
+      hours = 0;
+      updateStopwatch();
+    }
+
+    function updateStopwatch() {
+      seconds++;
+      if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes === 60) {
+          minutes = 0;
+          hours++;
+        }
+      }
+
+      const formattedTime = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+      document.getElementById('stopwatch').innerText = formattedTime;
+    }
+
+    function formatTime(time) {
+      return time < 10 ? `0${time}` : time;
+    }
+  </script>
+  
+  <div>
+  </body>
+  <body>
+  <style>
+    body {
+      background-color: black;
+      color: purple;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: bottom;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #stopwatch {
+      font-size: 2em;
+      margin: 10px;
+    }
+
+    #controls {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: purple;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+    <button onclick="startStopwatch()">Start</button>
+    <button onclick="stopStopwatch()">Stop</button>
+    <button onclick="resetStopwatch()">Reset</button>
+  </div>
 </body>
 </html>
