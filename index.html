@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,10 +45,11 @@
             <body>
               <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="tracker.html">Tracker</a></li>
-                <li><a href="record.html">Start Sleeping</a></li>
-                <li><a href="accountpage.html">Account</a></li>
-                <li><a href="question.html">Q&A</a></li>
+              <li><a href="tracker.html">Tracker</a></li>
+              <li><a href="History.html">Sleep History</a></li>
+              <li><a href="record.html">Start Sleeping</a></li>
+              <li><a href="accountpage.html">Account</a></li>
+              <li><a href="question.html">Q&A</a></li>
               </ul>
         </body>
 </head>
@@ -65,8 +65,18 @@
                 <canvas id="myChart" style="width:700%; max-width:1200px"></canvas>
             </div>
             <div style="text-align: center;">
-                <h2 style="font-size:60px;">Sleep Tip #5</h2>
-                <p>Counting sheep helps you to fall asleep.</p>
+                <h2 style="font-size:50px;">Sleep Tip #5</h2>
+                <button type="button" onclick="myFunction()">Click to see new tip!</button>
+              <p id="Z's">Counting sheep helps you to fall asleep.</p>
+              <script>
+              function myFunction() {
+                document.getElementById("Z's").innerHTML = "Listening to music like ocean sounds can also help!";
+                }
+              </script>
+
+              
+                <h2 style="font-size:50px;">How many more sleeps till next level?</h2>
+                <a href="levelup.html"><p>Zero!</p></a>
             </div>
         </div>
 
